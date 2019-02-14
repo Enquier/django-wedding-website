@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 """
 
 import os
+from . import secrets
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -128,13 +129,20 @@ STATICFILES_DIRS = (
 )
 
 # the address your emails (save the dates/invites/etc.) will come from
-DEFAULT_WEDDING_FROM_EMAIL = 'You and Your Partner <happilyeverafter@example.com>'
+DEFAULT_WEDDING_FROM_EMAIL = 'Tripp-Wheeler Wedding <trippwheelerwedding@gmail.com>'
 # the default reply-to of your emails
-DEFAULT_WEDDING_REPLY_EMAIL = 'happilyeverafter@example.com'
+DEFAULT_WEDDING_REPLY_EMAIL = 'trippwheelerwedding@gmail.com'
 
 # when sending test emails it will use this address
 DEFAULT_WEDDING_TEST_EMAIL = DEFAULT_WEDDING_FROM_EMAIL
 WEDDING_CC_LIST = []  # put email addresses here if you want to cc someone on all your invitations
+
+# Other email config
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'trippwheelerwedding@gmail.com'
+EMAIL_HOST_PASSWORD = secrets.email_host_password
 
 try:
     from .localsettings import *
