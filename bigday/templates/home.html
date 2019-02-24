@@ -1,29 +1,19 @@
 {% extends "base.html" %}
+{% load staticfiles %}
 {% block title %}{{ title }}{%endblock title %}
 
 {% block style %}
+html {
+	background-color: white;
+}
 body {
-	background-image: url("static/bigday/images/20181012-105514-k-70-0033.jpg");
-	{#background-image: url("static/bigday/images/20181023-092741-k-70-0527.jpg");#}
-	background-size: cover;
+	background-color: white;
+	box-shadow: none;
 }
 {%endblock style %}
 
-
 {% block page_content %}
-  
-	<div class="starter-template">
-		<h1>Save the Date!</h1>
-		<p class="lead">
-			For the wedding of
-		</p>
-		<h2>Alex Wheeler and Scott Tripp</h2>
-		<p class="lead">
-			September 1st, 2019<br>
-			San Diego Zoo Safari Park<br>
-			15500 San Pasqual Valley Road,
-			Escondido, California
-		</p>
-	</div>
+
+	<img src="{% static "bigday/images/SaveTheDate.jpg" %}" class="img-fluid max-width: 100%">
 
 {% endblock page_content %}

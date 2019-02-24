@@ -5,12 +5,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<meta name="description" content="">
 		<meta name="author" content="">
-		<link rel="icon" href="../../../../favicon.ico">
-
 		<title>{% block title %}{% endblock %}</title>
-		<style>{% block style %}{% endblock %}</style>
-
 		{% load staticfiles %}
+
+		<link rel="icon" href="../../../../favicon.ico">
 
 		<!-- Bootstrap core CSS -->
 		<link href="{% static "bootstrap/css/bootstrap.min.css" %}" rel="stylesheet">
@@ -18,11 +16,12 @@
 		<!-- Custom styles for this template -->
 		<link href="{% static "bigday/css/stylesheet.css" %}" rel="stylesheet">
 
+		<!-- Page specific styles looked at last -->
+		<style>{% block style %}{% endblock %}</style>
+
 	</head>
 
 	<body class="text-center">
-
-		<div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
 
 			{# --------------------------------------------------------------- #}
 			{# Navbar - global navigation                                      #}
@@ -59,7 +58,7 @@
 					{# Alert Boxes ----------------------------------------------- #}
 					<!-- alert messages -->
 					{% if messages %}
-						<div class="container">
+						<div class="container-fluid">
 							{% for message in messages %}
 								<div class="alert alert-success" role="alert">
 									<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
@@ -86,7 +85,6 @@
 				</div>
 			</footer>
 			{% endcomment %}
-		</div>
 
 
 		<!-- Bootstrap core JavaScript
